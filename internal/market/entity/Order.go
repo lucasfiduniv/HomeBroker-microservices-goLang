@@ -1,6 +1,6 @@
 package entity
 
-type order struct {
+type Order struct {
 	ID            string
 	Investor      *Investor
 	Asset         *Asset
@@ -12,16 +12,16 @@ type order struct {
 	Transactions  []*Transaction
 }
 
-func NewOrder(OrderID string, Investor *Investor, asset *Asset, shares int, price float64, orderType string, status string) *Order {
+func NewOrder(orderID string, investor *Investor, asset *Asset, shares int, price float64, orderType string, status string) *Order {
 	return &Order{
-		ID:            OrderID,
+		ID:            orderID,
 		Investor:      investor,
 		Asset:         asset,
 		Shares:        shares,
 		PendingShares: shares,
 		Price:         price,
 		OrderType:     orderType,
-		Status:        "OPEN",
+		Status:        status,
 		Transactions:  []*Transaction{},
 	}
 }
