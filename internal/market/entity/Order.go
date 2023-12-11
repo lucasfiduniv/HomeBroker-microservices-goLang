@@ -1,6 +1,6 @@
 package entity
 
-type Order struct {
+type order struct {
 	ID            string
 	Investor      *Investor
 	Asset         *Asset
